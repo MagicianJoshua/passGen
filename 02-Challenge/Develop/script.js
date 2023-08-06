@@ -13,10 +13,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  var allChoice = [];
+  var allChoice = []; //This is an array that will store arrays if the user wants the specified option in the password
 
   var lettersLower = "abcdefghijklmnopqrstuvwxyz";
-  var lettersLower = Array.from(lettersLower);
+  var lettersLower = Array.from(lettersLower); // took a string and turned it into an array because i was to lazy to add every single comma
+
   // console.log(lettersLower);
 
   var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,22 +37,24 @@ function generatePassword() {
   );
   const num = parseInt(charChoice);
 
-  if (isNaN(num) === true){
-    window.prompt("Please enter a number.")
-    console.log(isNaN("Isnan " +num));
+  if (isNaN(num) === true) {
+    //This if statement checks to see if the const num is a number if it is not the user will be asked
+    //please select a number
+    window.prompt("Please enter a number.");
+    console.log(isNaN("Isnan " + num));
     generatePassword();
     return;
-  }else {
+  } else {
     console.log(num);
-    console.log(isNaN("Isnan " +num));
-    
+    console.log(isNaN("Isnan " + num));
   }
 
   const specialCharChoice = window.confirm(
+    //this const is asking if the user wants special characters and 
     "Would you like to include special chracters? \nCLick ok for yes and cancel for no."
   );
 
-  if (specialCharChoice === true) {
+  if (specialCharChoice === true) { //if the user wants special characters we add it to the array if not we skip it
     allChoice.push(specialChar);
     console.log(allChoice);
   }
@@ -60,7 +63,7 @@ function generatePassword() {
     "Would you like to include uppercase letters in your password \nClick ok for yes and cancel for no"
   );
 
-  if (upperChoice === true) {
+  if (upperChoice === true) {//if the user wants uppercase letters we add it to the array if not we skip it
     allChoice.push(lettersUpper);
     console.log(allChoice);
   }
@@ -69,7 +72,7 @@ function generatePassword() {
     "Would you like to include numbers in your password \nClick ok for yes and cancel for no"
   );
 
-  if (numeroChoice === true) {
+  if (numeroChoice === true) {//if the user wants numbers we add it to the array if not we skip it
     allChoice.push(numeros);
     console.log(allChoice);
   }
@@ -78,7 +81,7 @@ function generatePassword() {
     "Would you like to include lower case letters in your password \nClick ok for yes and cancel for no"
   );
 
-  if (lowerChoice === true) {
+  if (lowerChoice === true) {//if the user wants lowercase letters we add it to the array if not we skip it
     allChoice.push(lettersLower);
     console.log(allChoice);
   }
@@ -90,11 +93,8 @@ function generatePassword() {
   //   window.alert("Please enter a number.");
   // }
 
-  // for (i = 0; i < num ; i ++) {
-  //   let rand = Math.floor(Math.random() * letters.length);
-  //   pass.push(letters[rand])
-  // }
-  // var numPass = pass.toString();
-  // numPass = numPass.replaceAll("," ,"");
-  // window.alert(numPass);
-}
+  for (i = 0; i < num ; i ++) {
+    let rand = Math.floor(Math.random() * allChoice)
+    
+  }
+  }
