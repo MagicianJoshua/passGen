@@ -25,7 +25,15 @@ function generatePassword() {
   let num = parseInt(charChoice);
 
   let specialCharChoice = window.confirm("Would you like to include special chracters? \nCLick ok for yes and cancel for no.")
-  window.alert(specialCharChoice);
+  
+
+  let upperChoice = window.confirm("Would you like to include uppercase letters in your password \nClick ok for yes and cancel for no") ;
+  let lowerChoice = window.confirm("Would you like to include lower case letters in your password \nClick ok for yes and cancel for no") ;
+  let numeroChoice =  window.confirm("Would you like to include numbers in your password \nClick ok for yes and cancel for no") ;
+
+
+
+
 
  
   // if (typeof num  == "number"){ 
