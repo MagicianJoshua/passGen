@@ -16,23 +16,52 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword() {
-  const lettersLower = "abcdefghijklmnopqrstuvwxyz"
-  const lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  const specialChar = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"
-  const numeros = "123456789"
- 
+  var allChoice = [];
+
+  var lettersLower = "abcdefghijklmnopqrstuvwxyz";
+  var lettersLower = Array.from(lettersLower);
+  // console.log(lettersLower);
+
+  var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lettersUpper = Array.from(lettersUpper);
+  // console.log(lettersUpper);
+
+  var specialChar = " !\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~";
+  var specialChar = Array.from(specialChar);
+  // console.log(specialChar);
+
+  var numeros = "123456789";
+  var numeros = Array.from(numeros);
+  // console.log(numeros);
+
   let charChoice = window.prompt("how many characters would you like to have? ");
   let num = parseInt(charChoice);
-
-  let specialCharChoice = window.confirm("Would you like to include special chracters? \nCLick ok for yes and cancel for no.")
   
-
+  let specialCharChoice = window.confirm("Would you like to include special chracters? \nCLick ok for yes and cancel for no.")
+  if (specialCharChoice === true) {
+    allChoice.push(specialChar);
+    console.log(allChoice);
+  }
+  
+  
   let upperChoice = window.confirm("Would you like to include uppercase letters in your password \nClick ok for yes and cancel for no") ;
-  let lowerChoice = window.confirm("Would you like to include lower case letters in your password \nClick ok for yes and cancel for no") ;
+  if (upperChoice === true) {
+    allChoice.push(lettersUpper);
+    console.log(allChoice);
+  }
+
   let numeroChoice =  window.confirm("Would you like to include numbers in your password \nClick ok for yes and cancel for no") ;
+  if (numeroChoice === true) {
+    allChoice.push(numeros);
+    console.log(allChoice);
+  }
 
-
-
+  let lowerChoice = window.confirm("Would you like to include lower case letters in your password \nClick ok for yes and cancel for no") ;
+  if (lowerChoice === true) {
+    allChoice.push(lettersLower);
+    console.log(allChoice);
+  }
+  
 
 
  
