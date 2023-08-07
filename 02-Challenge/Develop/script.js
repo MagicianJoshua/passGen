@@ -14,7 +14,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var allChoice = []; //This is an array that will store arrays if the user wants the specified option in the password
-
+  var password = [];
   var lettersLower = "abcdefghijklmnopqrstuvwxyz";
   var lettersLower = Array.from(lettersLower); // took a string and turned it into an array because i was to lazy to add every single comma
 
@@ -56,7 +56,7 @@ function generatePassword() {
 
   if (specialCharChoice === true) { //if the user wants special characters we add it to the array if not we skip it
     allChoice.push(specialChar);
-    console.log(allChoice);
+    // console.log(allChoice);
   }
 
   const upperChoice = window.confirm(
@@ -65,7 +65,7 @@ function generatePassword() {
 
   if (upperChoice === true) {//if the user wants uppercase letters we add it to the array if not we skip it
     allChoice.push(lettersUpper);
-    console.log(allChoice);
+    // console.log(allChoice);
   }
 
   const numeroChoice = window.confirm(
@@ -74,7 +74,7 @@ function generatePassword() {
 
   if (numeroChoice === true) {//if the user wants numbers we add it to the array if not we skip it
     allChoice.push(numeros);
-    console.log(allChoice);
+    // console.log(allChoice);
   }
 
   const lowerChoice = window.confirm(
@@ -83,7 +83,7 @@ function generatePassword() {
 
   if (lowerChoice === true) {//if the user wants lowercase letters we add it to the array if not we skip it
     allChoice.push(lettersLower);
-    console.log(allChoice);
+    // console.log(allChoice);
   }
 
   // if (typeof num  == "number"){
@@ -93,8 +93,15 @@ function generatePassword() {
   //   window.alert("Please enter a number.");
   // }
 
-  for (i = 0; i < num ; i ++) {
-    let rand = Math.floor(Math.random() * allChoice)
-    
+  // first i want to selec the array in the array we are going to pick, which has a mxiumum value of allchoice.length
+  // the after we select an array inside the array we need to pick a number.
+  // we then need to find a way to include everything the user wanted.
+
+  for (i = 0; i < num ; i++) {
+    let randArray = Math.floor(Math.random() * allChoice.length);
+    let arrayChoice = allChoice[randArray];
+    let randCHar = Math.floor(Math.random() * arrayChoice.length );
+    password.push(arrayChoice[randCHar]);
   }
+  console.log(password);
   }
