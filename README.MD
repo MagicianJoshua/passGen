@@ -3,7 +3,8 @@
 - A: To Make a password generator.
 
 - Q: What was your biggest challenge?
-- A: My biggest challenge for this specific projects was making sure that the password array had everything the user needed. 
+- A: My biggest challenge for this specific projects was making sure that the password array had everything  
+     the user needed. 
      This was done by looping through multiple arrays inside one master array.
 
 ## How to use
@@ -33,4 +34,4 @@ N/A
 
 
  ## Disclaimer
- This website was built for educational purposes ONLY!
+ This was built for educational purposes ONLY! and not intended to provide any actual secure passwords.
